@@ -1,4 +1,5 @@
 require 'rspec'
+require 'pry'
 require "visual_review"
 
 RSpec.configure do |config|

@@ -1,5 +1,8 @@
 module VisualReview
   class Client
+
+    attr_reader :connection, :host, :port
+
     def initialize(options = {})
       @host = options[:host]
       @port = options[:port]
@@ -8,7 +11,7 @@ module VisualReview
 
     private
     def set_connection
-      @connection = HTTPClient.new
+      @connection = JSONClient.new
       @connection.base_url = "#{@host}:#{@port}"
     end
   end

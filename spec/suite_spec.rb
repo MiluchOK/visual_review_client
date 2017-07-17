@@ -13,6 +13,7 @@ describe 'Suite' do
   end
 
   # it 'should get a suite status' do
+  #   binding.pry
   #   body = VisualReview::Suite.get_status(4, 5)
   #   expect(body).not_to be_nil
   #   expect(body).not_to be_empty

@@ -9,4 +9,10 @@ describe 'Run' do
     expect(body).not_to be_nil
     expect(body['id']).not_to be_nil
   end
+
+  it 'should be analysable' do
+    body = VisualReview::Run.get('6')
+    expect(body).not_to be_nil
+    expect(body['id']).not_to be_nil
+  end
 end

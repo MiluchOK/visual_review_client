@@ -5,6 +5,7 @@ require "visual_review/client"
 require "visual_review/models/project"
 require "visual_review/models/run"
 require "visual_review/models/suite"
+require "visual_review/models/screenshot"
 
 module VisualReview
   class << self

@@ -1,15 +1,18 @@
-module VisualReview
-  class Suite
-    def self.get_all(project_id)
-      VisualReview.client.connection.get("/api/projects/#{project_id}/suites").body
-    end
+describe 'Screenshot' do
+  it 'should add a screenshot to a run' do
+    file = File.open('spec/fixtures/test_screenshot.png')
+    body = VisualReview::Screenshot.add(25, file, {
+        screenshotName: 'lol',
+        meta: {},
+        properties: {}
+    })
+    expect(body['imageId']).not_to be_nil
+    expect(body['imageId']).not_to be_empty
+  end
 
-    def self.get(project_id, suite_id)
-      VisualReview.client.connection.get("/api/projects/#{project_id}/suites/#{suite_id}").body
-    end
-
-    def self.get_status(project_id, suite_id)
-      VisualReview.client.connection.get("/api/projects/#{project_id}/suites/#{suite_id}/status").body
-    end
+  it 'should get a screenshot' do
+    body = VisualReview::Screenshot.get(25)
+    expect(body).not_to be_nil
+    expect(body).not_to be_empty
   end
 end

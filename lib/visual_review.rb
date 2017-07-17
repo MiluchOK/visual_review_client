@@ -2,6 +2,7 @@ require 'httpclient'
 require 'jsonclient'
 require "visual_review/version"
 require "visual_review/client"
+require "visual_review/models/project"
 
 module VisualReview
   class << self
